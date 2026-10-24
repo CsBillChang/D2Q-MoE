@@ -1,0 +1,42 @@
+# Example data paths for the simplified public model.
+num_classes: 1
+remap_mscoco_category: false
+
+train_dataloader:
+  dataset:
+    type: MultimodalCocoDetection
+    img_folder: ./data/images/train
+    npy_folder: ./data/depth/train
+    ann_file: ./data/annotations/train.json
+    return_masks: false
+    npy_size_mismatch: resize
+    transforms:
+      type: MultimodalCompose
+      ops:
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [640, 640]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: float32, scale: true}
+        - {type: NormalizeNPYMinMax}
+        - {type: ConvertBoxes, fmt: cxcywh, normalize: true}
+  collate_fn:
+    type: BatchMultimodalCollateFunction
+    base_size: 640
+
+val_dataloader:
+  dataset:
+    type: MultimodalCocoDetection
+    img_folder: ./data/images/val
+    npy_folder: ./data/depth/val
+    ann_file: ./data/annotations/val.json
+    return_masks: false
+    npy_size_mismatch: resize
+    transforms:
+      type: MultimodalCompose
+      ops:
+        - {type: Resize, size: [640, 640]}
+        - {type: ConvertPILImage, dtype: float32, scale: true}
+        - {type: NormalizeNPYMinMax}
+  collate_fn:
+    type: BatchMultimodalCollateFunction
+    base_size: 640

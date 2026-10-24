@@ -1,0 +1,22 @@
+# RGB-only baseline. No D2Q-MoE core module is loaded by this configuration.
+__include__:
+  - ../dataset/custom_detection.yml
+  - ../runtime.yml
+  - ../base/dataloader_dfine.yml
+  - ../base/optimizer.yml
+  - ../base/dfine_hgnetv2.yml
+output_dir: ./outputs/rgb_baseline
+HGNetv2:
+  name: B2
+  return_idx: [1, 2, 3]
+  pretrained: false
+  freeze_at: -1
+  freeze_norm: false
+  use_lab: true
+HybridEncoder:
+  in_channels: [384, 768, 1536]
+  hidden_dim: 256
+  depth_mult: 0.67
+DFINETransformer:
+  num_layers: 4
+  eval_idx: -1

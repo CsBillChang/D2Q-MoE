@@ -1,0 +1,41 @@
+# Use your own data. Category IDs must be consecutive 0..num_classes-1.
+task: detection
+num_classes: 1
+remap_mscoco_category: false
+evaluator:
+  type: CocoEvaluator
+  iou_types: [bbox]
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images/train
+    ann_file: ./data/annotations/train.json
+    return_masks: false
+    transforms:
+      type: Compose
+      ops: null
+  shuffle: true
+  num_workers: 0
+  drop_last: true
+  pin_memory: false
+  collate_fn:
+    type: BatchImageCollateFunction
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images/val
+    ann_file: ./data/annotations/val.json
+    return_masks: false
+    transforms:
+      type: Compose
+      ops: null
+  shuffle: false
+  num_workers: 0
+  drop_last: false
+  pin_memory: false
+  collate_fn:
+    type: BatchImageCollateFunction

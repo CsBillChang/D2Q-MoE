@@ -1,0 +1,23 @@
+# Install a matching PyTorch/torchvision pair for your platform first.
+torch
+torchvision
+PyYAML
+numpy
+scipy
+Pillow
+opencv-python
+tqdm
+matplotlib
+tensorboard
+pycocotools
+faster-coco-eval
+thop
+psutil
+rich
+packaging
+sympy
+defusedxml
+
+# General annotation conversion and analysis utilities.
+scikit-learn
+seaborn

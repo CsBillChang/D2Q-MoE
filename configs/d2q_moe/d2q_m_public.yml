@@ -1,0 +1,14 @@
+# A runnable public example, not the manuscript architecture or recipe.
+__include__:
+  - ../dfine/dfine_hgnetv2_m_custom.yml
+  - ../dataset/rgbd_detection.yml
+
+model: D2QMoE
+output_dir: ./outputs/d2q_m_public
+
+D2QMoE:
+  backbone: HGNetv2
+  encoder: HybridEncoder
+  decoder: DFINETransformer
+  feat_channels: [384, 768, 1536]
+  depth_channels: 16

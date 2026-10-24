@@ -1,0 +1,15 @@
+# Example settings for the public RGB baseline, not paper reproduction.
+use_amp: false
+use_ema: false
+epoches: 12
+lrsheduler: null
+clip_max_norm: 0.1
+optimizer:
+  type: AdamW
+  lr: 0.0001
+  betas: [0.9, 0.999]
+  weight_decay: 0.0001
+lr_scheduler:
+  type: MultiStepLR
+  milestones: [8, 11]
+  gamma: 0.1

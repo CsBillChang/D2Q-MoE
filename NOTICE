@@ -1,0 +1,10 @@
+D2Q-MoE submission-time public snapshot
+
+The general framework files were selected and sanitized from the authors'
+current local DEIM development codebase. They include code derived from DEIM,
+D-FINE, RT-DETR, and sources identified in the retained file headers. Existing
+copyright and license notices are preserved.
+
+The public GTDMoE, RADF, and SRQM modules are simplified runnable replacements.
+They are not the complete research algorithms. The public example model and
+configuration are not the manuscript reproduction recipe.

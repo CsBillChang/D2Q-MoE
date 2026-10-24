@@ -1,0 +1,45 @@
+# Local environments and editor state
+.git/
+.agents/
+.codex/
+.vscode/
+.idea/
+.venv/
+venv/
+
+# Private data and runtime outputs
+/data/
+/outputs/
+/output/
+/logs/
+/log/
+/runs/
+/weight/
+/weights/
+/checkpoints/
+/heatmap_result/
+/featuremap_result/
+/review/
+/tmp/
+/dataset/images/
+/dataset/annotations/
+/dataset/depth/
+
+# Models, arrays, logs and local caches
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+*.safetensors
+*.npy
+*.npz
+*.pkl
+*.log
+*.zip
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
+events.out.tfevents.*

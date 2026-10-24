@@ -1,0 +1,17 @@
+# Public RGB baseline defaults; not the paper training recipe.
+print_freq: 20
+output_dir: ./outputs/rgb_baseline
+checkpoint_freq: 1
+plot_train_batch_freq: 0
+sync_bn: false
+find_unused_parameters: false
+verbose_type: origin
+use_amp: false
+use_amp_fallback_fp32: false
+scaler:
+  type: GradScaler
+  enabled: true
+use_ema: false
+cache_imgsz: 640
+ram_cache: false
+yolo_metrice: false
