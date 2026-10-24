@@ -8,8 +8,6 @@ D²Q-MoE introduces three components in the detection pipeline:
 - **RADF**: a cross-modal feature fusion module.
 - **SRQM**: a query classification modulation head.
 
-The public snapshot retains the general framework, training entry, module interfaces, and an example RGB-D configuration chain. The three components use simplified public implementations. The full research designs and paper-specific training settings are reserved for a later release after paper acceptance.
-
 ## Project Layout
 
 ```text
